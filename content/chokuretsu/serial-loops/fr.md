@@ -35,14 +35,6 @@ Serial Loops is an editing suite for [Suzumiya Haruhi no Chokuretsu](/chokuretsu
 <br />
 <br />
 
-## News
-::blog-tag-stack
----
-tag: 'serial loops'
-limit: 2
----
-::
-
 ## Downloads
 Downloads are available for Windows, macOS (Intel and Apple Silicon) and Linux (RPM & Debian packages) [on GitHub](https://github.com/haroohie-club/SerialLoops/releases). We offer both release (recommended) and nightly pre-release builds.
 

@@ -17,12 +17,6 @@
             day: doc.navigation.day }) }) }}
                                     </IconifiedText>
                                 </div>
-                                <div class="tags">
-                                    <IconifiedText icon="fa6-solid:tags">{{ $t('tags-header') }}</IconifiedText>
-                                    <span class="tag" v-for="tag of doc.navigation.tags">
-                                        <NuxtLink :to="localePath('/tag/' + tag)">{{ $t(`${tag.replace(' ', '-')}-tag`) }}</NuxtLink>
-                                    </span>
-                                </div>
                             </div>
                         </div>
                     </div>

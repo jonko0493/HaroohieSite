@@ -19,6 +19,7 @@
   "dependencies": {
     "@giscus/vue": "^3.0.0",
     "nuxt-icon": "^0.4.2",
+    "serve": "^14.2.4",
     "url-file-size": "^1.0.5-1",
     "vue-carousel": "^0.18.0",
     "vue-gtag-next": "^1.14.0",

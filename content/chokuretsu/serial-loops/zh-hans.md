@@ -35,14 +35,6 @@ Serial Loops 是一个用于[《凉宫春日的串联》](/zh-hans/chokuretsu)�
 <br />
 <br />
 
-## 新闻
-::blog-tag-stack
----
-tag: 'serial loops'
-limit: 2
----
-::
-
 ## 下载
 可以[在 GitHub 上](https://github.com/haroohie-club/SerialLoops/releases)下载用于 Windows、macOS（Intel 和 Apple Silicon 芯片）和 Linux（RPM & Debian 包）的软件。我们提供发布版（推荐）和 nightly 预发布版本。
 
