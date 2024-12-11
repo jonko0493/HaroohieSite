@@ -20,7 +20,7 @@ export default {
     // Pre render the sitemap, 404, and RSS feeds
     nitro: {
         prerender: {
-            routes: ['/sitemap.xml', '/404.html', '/rss.xml', '/de/rss.xml', '/fr/rss.xml', '/it/rss.xml', '/pt-br/rss.xml', '/ru/rss.xml', '/zh-hans/rss.xml', '/zh-hant/rss.xml']
+            routes: ['/sitemap.xml', '/404.html', '/rss.xml', '/de/rss.xml', '/fr/rss.xml', '/it/rss.xml', '/ja/rss.xml', '/pt-br/rss.xml', '/ru/rss.xml', '/zh-hans/rss.xml', '/zh-hant/rss.xml']
         }
     },
 
@@ -60,6 +60,7 @@ export default {
             { code: 'en', iso: 'en', file: 'locales/en.json', dir: 'ltr' },
             { code: 'fr', iso: 'fr', file: 'locales/fr.json', dir: 'ltr' },
             { code: 'it', iso: 'it-IT', file: 'locales/it.json', dir: 'ltr' },
+            { code: 'ja', iso: 'ja', file: 'locales/ja.json', dir: 'ltr' },
             { code: 'pt-br', iso: 'pt-BR', file: 'locales/pt-br.json', dir: 'ltr' },
             { code: 'ru', iso: 'ru', file: 'locales/ru.json', dir: 'ltr' },
             { code: 'zh-hans', iso: 'zh-Hans', file: 'locales/zh-Hans.json', dir: 'ltr' },
@@ -215,6 +216,37 @@ export default {
                     query: {
                         where: [
                             { _path: /^\/blog\/[^\/]+\/it$/ },
+                        ]
+                    },
+                },
+                tags: [
+                    [/^(?=\/)/, urlBase],
+                    [/blog\/([^\/]+)\/([\w-]+)$/, '$2/blog/$1'],
+                ],
+                revisit: '6h',
+                content: true
+            },
+            '/ja/rss.xml': {
+                feed: {
+                    defaults: {
+                        title: 'The Haroohie Translation Club\'s Blog',
+                        description: 'Blog posts written by the various staff members of the Haroohie Translation Club',
+                        copyright: `CC-BY-SA 4.0 ${new Date().getFullYear()} by The Haroohie Translation Club`,
+                        link: urlBase,
+                        id: urlBase,
+                        author: { name: 'The Haroohie Translation Club' },
+                    },
+                },
+                item: {
+                    templateRoots: [true, 'feedme'],
+                    mapping: [
+                        ['link', '_path'],
+                        ['date', 'navigation', (nav: any) => new Date(nav.year, nav.month - 1, nav.day)],
+                        ['description', 'navigation', (nav: any) => `<img src="/images/blog/${nav.image}"/><br/>${nav.description}`],
+                    ],
+                    query: {
+                        where: [
+                            { _path: /^\/blog\/[^\/]+\/ja$/ },
                         ]
                     },
                 },
